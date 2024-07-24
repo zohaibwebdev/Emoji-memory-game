@@ -1,7 +1,12 @@
+import MemoryGame from '@/shared/components/memory-game/memory-game.component'
 import React from 'react'
 
 const HomePage = () => {
-    return <div>HomePage</div>
+    return (
+        <>
+            <MemoryGame />
+        </>
+    )
 }
 
 export default HomePage
