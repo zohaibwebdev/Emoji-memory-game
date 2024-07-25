@@ -1,11 +1,14 @@
 import React from 'react'
-import dataArray from '@/shared/data/data'
 import FlipCard from '../flip-card/flip-card.component'
-const Cards = () => {
+import { useGameContext } from '@/context/memory-game-context/memory-game-context'
+
+const Cards: React.FC = () => {
+    const { state } = useGameContext()
+    console.log('state cards', state.cards)
     return (
-        <div className="grid grid-cols-5 gap-3 mt-10 px-10">
-            {dataArray.map((item) => (
-                <FlipCard emoji={item.emoji} uniqueValue={item.uniqueValue} key={item.uniqueValue} />
+        <div className="grid grid-cols-5 gap-3 my-10 px-10">
+            {state.cards.map((card) => (
+                <FlipCard key={card.id} card={card} />
             ))}
         </div>
     )

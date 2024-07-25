@@ -1,4 +1,5 @@
+import { Card } from '@/context/memory-game-context/interface'
+
 export interface FlipCardProps {
-    emoji: string
-    uniqueValue: string
+    card: Card
 }

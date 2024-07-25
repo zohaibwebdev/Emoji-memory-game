@@ -1,12 +1,16 @@
 import React from 'react'
+import { useGameContext } from '@/context/memory-game-context/memory-game-context'
 
-const ScoreBoard = () => {
+const ScoreBoard: React.FC = () => {
+    const { state } = useGameContext()
+    const { score, flips, time } = state
+
     return (
         <div className="flex justify-center">
             <div className="flex items-center gap-4">
                 <div className="relative inline-block">
                     <p className="text-black bg-white pl-[60px] py-[10px] pr-4 text-[18px] font-medium rounded-3xl">
-                        Score: 0
+                        Score: {score}
                     </p>
                     <div className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3">
                         <span className="text-2xl">🎖️</span>
@@ -14,7 +18,7 @@ const ScoreBoard = () => {
                 </div>
                 <div className="relative inline-block">
                     <p className="text-black bg-white pl-[60px] py-[10px] pr-4 text-[18px] font-medium rounded-3xl">
-                        Flips: 0
+                        Flips: {flips}
                     </p>
                     <div className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3">
                         <span className="text-2xl">🐬</span>
@@ -22,7 +26,7 @@ const ScoreBoard = () => {
                 </div>
                 <div className="relative inline-block">
                     <p className="text-black bg-white pl-[60px] py-[10px] pr-4 text-[18px] font-medium rounded-3xl">
-                        Time: 60
+                        Time: {time}
                     </p>
                     <div className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3">
                         <span className="text-2xl">⏰</span>
